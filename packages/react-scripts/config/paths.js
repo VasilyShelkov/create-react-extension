@@ -82,7 +82,9 @@ module.exports = {
   appPublic: resolveApp('public'),
   manifestJson: resolveApp('public/manifest.json'),
   appPopupHtml: resolveApp('public/popup.html'),
+  appOptionsHtml: resolveApp('public/options.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appOptionsJs: resolveModule(resolveApp, 'src/options/index'),
   appBackgroundJs: resolveModule(resolveApp, 'src/background/index'),
   appContentScriptJs: resolveModule(resolveApp, 'src/contentScript/index'),
   appPackageJson: resolveApp('package.json'),
@@ -109,7 +111,9 @@ module.exports = {
   appPublic: resolveApp('public'),
   manifestJson: resolveApp('public/manifest.json'),
   appPopupHtml: resolveApp('public/popup.html'),
+  appOptionsHtml: resolveApp('public/options.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appOptionsJs: resolveModule(resolveApp, 'src/options/index'),
   appBackgroundJs: resolveModule(resolveApp, 'src/background/index'),
   appContentScriptJs: resolveModule(resolveApp, 'src/contentScript/index'),
   appPackageJson: resolveApp('package.json'),
@@ -149,7 +153,12 @@ if (
     appPublic: resolveOwn(`${templatePath}/public`),
     manifestJson: resolveApp(`${templatePath}/public/manifest.json`),
     appPopupHtml: resolveOwn(`${templatePath}/public/popup.html`),
+    appOptionsHtml: resolveOwn(`${templatePath}/public/options.html`),
     appIndexJs: resolveModule(resolveOwn, `${templatePath}/src/index`),
+    appOptionsJs: resolveModule(
+      resolveOwn,
+      `${templatePath}/src/options/index`
+    ),
     appBackgroundJs: resolveModule(
       resolveOwn,
       `${templatePath}/src/background/index`
