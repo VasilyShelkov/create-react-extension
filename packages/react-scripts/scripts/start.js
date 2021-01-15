@@ -40,11 +40,8 @@ const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const {
   choosePort,
   createCompiler,
-  prepareProxy,
   prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils');
-const openBrowser = require('react-dev-utils/openBrowser');
-const semver = require('semver');
 const paths = require('../config/paths');
 const configFactory = require('../config/webpack.config');
 const createDevServerConfig = require('../config/webpackDevServer.config');
@@ -63,6 +60,8 @@ if (
     paths.appIndexJs,
     paths.appBackgroundJs,
     paths.appContentScriptJs,
+    paths.appOptionsHtml,
+    paths.appOptionsJs,
   ])
 ) {
   process.exit(1);

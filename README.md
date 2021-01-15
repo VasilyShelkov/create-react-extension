@@ -9,7 +9,7 @@ This is a fork of [create-react-app](https://github.com/facebook/create-react-ap
 
 - [x] [Same CRA Developer Experience](https://github.com/facebook/create-react-app#whats-included) for your browser extension projects (~~service worker functionality~~)
 - [x] [Webpack dev server](https://github.com/webpack/webpack-dev-server) hot reloads extension on changes (NOTE: contentScript hot reloading not supported)
-- [x] [Supports any combination of background, content and popup chrome extensions](#only-1-new-convention)
+- [x] [Supports any combination of background, content, options and popup chrome extensions](#only-1-new-convention)
 - [x] [Automated fork watcher](https://github.com/wei/pull) to stay updated with the original CRA
 - [ ] Add support for [automated deployments](https://github.com/LinusU/wext-shipit) and docs to help users with what to do after having built their extension.
 - [ ] Add e2e test suite similar to the [original CRA](https://github.com/facebook/create-react-app/tree/master/test) and run with automated pipeline.
@@ -50,7 +50,7 @@ There are [different types of chrome extensions](https://developer.chrome.com/ex
 - [Popup UI](https://developer.chrome.com/extensions/user_interface#popup) which renders your `index.js` when you click on your extension in the browser extension icon.
 - [Background script](https://developer.chrome.com/extensions/background_pages) which will run in the background from `/background/index.js` and can be use for things like [state-management](https://github.com/tshaddix/webext-redux).
 - [Content script](https://developer.chrome.com/extensions/content_scripts) from `/contentScript/index.js` which will run on configured web pages
-- [Options UI](https://developer.chrome.com/extensions/options) :negative_squared_cross_mark: Does not support yet
+- [Options UI](https://developer.chrome.com/extensions/options) which renders your `/options/` when you click on your extension in the browser extension icon.
 - [Dev tools page](https://developer.chrome.com/extensions/devtools) :negative_squared_cross_mark: Does not support yet
 
 These are all controlled by the all important [`/public/manifest.json`](https://github.com/VasilyShelkov/create-react-extension/blob/master/packages/react-scripts/template/public/manifest.json) which is [configurable](https://developer.chrome.com/extensions/manifest) by you to control what kind of extension you want build.
@@ -102,12 +102,16 @@ my-browser-extension
 │   │   ├── icon-48.png
 │   │   ├── icon-128.png
 │   ├── popup.html
+│   ├── options.html
 │   └── manifest.json
 └── src
     ├── background
     │   ├── index.js
     ├── contentScripts
     │   ├── index.js
+    ├── options
+    │   ├── index.js
+    │   ├── Options.js
     ├── App.css
     ├── App.js
     ├── App.test.js

@@ -63,6 +63,8 @@ if (
     paths.appIndexJs,
     paths.appBackgroundJs,
     paths.appContentScriptJs,
+    paths.appOptionsHtml,
+    paths.appOptionsJs,
   ])
 ) {
   process.exit(1);

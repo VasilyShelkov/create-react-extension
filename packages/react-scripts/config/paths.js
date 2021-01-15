@@ -51,10 +51,12 @@ module.exports = {
   devAppBuild: resolveApp('dev'),
   appPublic: resolveApp('public'),
   manifestJson: resolveApp('public/manifest.json'),
+  appOptionsHtml: resolveApp('public/options.html'),
   appPopupHtml: resolveApp('public/popup.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appBackgroundJs: resolveModule(resolveApp, 'src/background/index'),
   appContentScriptJs: resolveModule(resolveApp, 'src/contentScript/index'),
+  appOptionsJs: resolveModule(resolveApp, 'src/options/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
@@ -75,10 +77,12 @@ module.exports = {
   devAppBuild: resolveApp('dev'),
   appPublic: resolveApp('public'),
   manifestJson: resolveApp('public/manifest.json'),
+  appOptionsHtml: resolveApp('public/options.html'),
   appPopupHtml: resolveApp('public/popup.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appBackgroundJs: resolveModule(resolveApp, 'src/background/index'),
   appContentScriptJs: resolveModule(resolveApp, 'src/contentScript/index'),
+  appOptionsJs: resolveModule(resolveApp, 'src/options/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
@@ -113,6 +117,7 @@ if (
     appPublic: resolveOwn(`${templatePath}/public`),
     manifestJson: resolveApp(`${templatePath}/public/manifest.json`),
     appPopupHtml: resolveOwn(`${templatePath}/public/popup.html`),
+    appOptionsHtml: resolveOwn(`${templatePath}/public/options.html`),
     appIndexJs: resolveModule(resolveOwn, `${templatePath}/src/index`),
     appBackgroundJs: resolveModule(
       resolveOwn,
@@ -121,6 +126,10 @@ if (
     appContentScriptJs: resolveModule(
       resolveOwn,
       `${templatePath}/src/contentScript/index`
+    ),
+    appOptionsJs: resolveModule(
+      resolveOwn,
+      `${templatePath}/src/options/index`
     ),
     appPackageJson: resolveOwn('package.json'),
     appSrc: resolveOwn(`${templatePath}/src`),
